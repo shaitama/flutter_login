@@ -3,6 +3,8 @@ import 'page1.dart';
 import 'page2.dart';
 
 class Homepage_FSDC extends StatelessWidget {
+  const Homepage_FSDC({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

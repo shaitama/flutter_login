@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'homepage_FSDC.dart';
+import 'signup_fsdc.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -11,10 +12,11 @@ void main() {
         foregroundColor: Colors.black,
       ),
       textTheme: TextTheme(
-          bodyMedium: TextStyle(
-        fontSize: 18,
-        color: Colors.amberAccent,
-      )),
+        bodyMedium: TextStyle(
+          fontSize: 18,
+          color: Colors.amberAccent,
+        ),
+      ),
     ),
     home: Scaffold(
       appBar: AppBar(
@@ -28,6 +30,8 @@ void main() {
 }
 
 class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
   @override
   _LoginFormState createState() => _LoginFormState();
 }
@@ -81,7 +85,19 @@ class _LoginFormState extends State<LoginForm> {
       ElevatedButton(
         onPressed: _handleLogin,
         child: Text('Login'),
-      )
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SignUp()),
+          );
+        },
+        child: Text('Sign Up'),
+      ),
     ]);
   }
 }
